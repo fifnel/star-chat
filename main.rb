@@ -291,7 +291,8 @@ get '/channels/:channel_name/messages/by_time_span/:start_time,:end_time', provi
 end
 
 post '/channels/:channel_name/messages', provides: :json do
-  sleep(1) if development?
+#  'development?' is undefined method. gem version?
+#  sleep(1) if development?
   body           = params[:body].to_s
   notice         = params[:notice] == 'true'
   temporary_nick = params[:temporary_nick].to_s
